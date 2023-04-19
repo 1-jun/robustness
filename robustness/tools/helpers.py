@@ -190,7 +190,8 @@ def custom_label_mapping(classes, class_to_idx, ranges):
     mapping = {}
     for class_name, idx in class_to_idx.items():
         for new_idx, range_set in enumerate(ranges):
-            if idx in range_set:
+#             if idx in range_set:
+            if class_name in range_set:
                 mapping[class_name] = new_idx
 
     filtered_classes = list(mapping.keys()).sort()
