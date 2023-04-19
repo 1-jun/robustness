@@ -38,7 +38,8 @@ class Lighting(object):
 
 # Special transforms for ImageNet(s)
 TRAIN_TRANSFORMS_IMAGENET = transforms.Compose([
-        transforms.RandomResizedCrop(224),
+        transforms.Resize((256,256)),
+#         transforms.RandomResizedCrop(224),
         transforms.RandomHorizontalFlip(),
         transforms.ColorJitter(
             brightness=0.1,
@@ -55,8 +56,8 @@ Random flip, Color Jitter, and Lighting Transform (see https://git.io/fhBOc)
 """
 
 TEST_TRANSFORMS_IMAGENET = transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
+        transforms.Resize((256, 256)),
+#         transforms.CenterCrop(224),
         transforms.ToTensor(),
     ])
 """
